@@ -9,7 +9,7 @@ line.map.with_index do |line, index|
   winning_cards = line.split(':')[1].split('|')[0].split(' ').map(&:to_i)
   owned_cards = line.split(':')[1].split('|')[1].split(' ').map(&:to_i)
   for i in index + 1..index + ((winning_cards & owned_cards).length)
-    copies_list[i] += (1 * copies_list[index])
+    copies_list[i] += copies_list[index]
   end
   copies_list[index]
 end
